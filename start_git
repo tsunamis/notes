@@ -1,0 +1,26 @@
+#1 Install git
+$ sudo apt-get install git-core git-doc
+
+#2 Configur git
+$ git config --global user.name "Firstname Lastname"
+$ git config --global user.email "myemail@gmail.com"
+
+#3 Generate Cryptographic Keys
+$ ssh-keygen -t rsa -C "myemail@gmail.com" -f ~/.ssh/git_rsa
+
+#4 Add Public Key To Github
+$ cat ~/.ssh/git_rsa.pub >>>> github.com user profiles
+
+#5 Tell SSH to Use The New Key
+$ ssh-add ~/.ssh/git_rsa
+
+Add to ~/.ssh/config:
+Host github.com
+        User            git
+        IdentityFile    ~/.ssh/git_rsa
+
+#6 Test Connection To Github
+$ ssh -T git@github.com
+
+#7 Clone a Repository And Start Coding
+$ git clone git@github.com:username/myrepo.git
