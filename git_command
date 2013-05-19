@@ -1,0 +1,2 @@
+# Rename files
+$ git mv old new
