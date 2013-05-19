@@ -1,0 +1,11 @@
+#1 Add file
+$ git add <file_name>
+
+#2 do a local commit
+git commit -a -m "Commit text"
+
+#3 add the remote repository
+git remote add origin git@github.com:tsunamis/notes.git
+
+#4 push everything to the remote server
+git push origin master
